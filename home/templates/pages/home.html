@@ -1,9 +1,283 @@
-{% extends "pages/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive FOOD Website Design Tutorial</title>
 
-{% block title %}Home{% endblock %}
+    <!-- aos css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-{% block content %}
-    <p>Tên: Nguyễn Đình Lộc</p>
-    <p>Năm: 2000</p>
-    <p>Trường: Đại học Khoa Học Tự Nhiên Tp.HCM</p>   
-{% endblock %}
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    </title>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block title %}{% endblock  %}
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><img src="{% static 'images/logo-img.png' %}" alt=""></a>
+
+    <div id="menu-bar" class="fas fa-hamburger"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">home</a></li>
+            <li><a href="#menu">menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content" data-aos="fade-right">
+        <h3>We belive good food offer great smile</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, odit distinctio error corporis adipisci molestias eveniet optio quaerat tempore asperiores!</p>
+        <a href="#"><button class="btn">get started</button></a>
+    </div>
+
+    <div class="image" data-aos="fade-up">
+        <img src="{% static 'images/home-img.png' %}" alt="">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<!-- <section class="about" id="about">
+
+    <div class="image" data-aos="fade-right"></div>
+
+    <div class="content" data-aos="fade-left">
+        <h3>a word about us</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium eligendi a totam consequatur! Quis minus amet iusto iure repudiandae, incidunt enim fugiat ipsa? Iure quam et quo quos quisquam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint totam pariatur saepe sit nostrum consequuntur, praesentium accusamus harum voluptate soluta.</p>
+        <a href="#"><button class="btn">learn more</button></a>
+    </div>
+
+</section> -->
+
+<!-- about section ends -->
+
+<section class="menu" id="menu">
+
+<h1 class="heading"> our delicious <span>menu</span> </h1>
+
+<ul class="list" data-aos="fade-down">
+    <li class="btn" data-src="{% static 'images/menu1.jpg' %}">breakfast</li>
+    <li class="btn active" data-src="./images/menu2.jpg">lunch</li>
+    <li class="btn" data-src="./images/menu3.jpg">dinner</li>
+    <li class="btn" data-src="./images/menu4.jpg">dessert</li>
+</ul>
+
+<div class="row" data-aos="fade-right">
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-right">
+            <img src="{% static 'images/product-1.jpg' %}" alt="">
+            <h3>delicious food</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$30.00</div>
+            <a href="#"><button class="btn">add to cart</button></a>
+        </div>
+    
+        <div class="box" data-aos="fade-left">
+            <img src="{% static 'images/product-2.jpg' %}" alt="">
+            <h3>delicious food</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$30.00</div>
+            <a href="#"><button class="btn">add to cart</button></a>
+        </div>
+    
+        <div class="box" data-aos="fade-right">
+            <img src="{% static 'images/product-3.jpg' %}" alt="">
+            <h3>delicious food</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$30.00</div>
+            <a href="#"><button class="btn">add to cart</button></a>
+        </div>
+    
+        <div class="box" data-aos="fade-left">
+            <img src="{% static 'images/product-4.jpg' %}" alt="">
+            <h3>delicious food</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$30.00</div>
+            <a href="#"><button class="btn">add to cart</button></a>
+        </div>
+    
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+<h1 class="heading"> our food <span>gallery</span> </h1>
+
+<div class="box-container">
+
+    <div class="box" data-aos="fade-up">
+        <img src="{% static 'images/img1.jpg' %}" alt="">
+        <h3>delicious food</h3>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <img src="{% static 'images/img2.jpg' %}" alt="">
+        <h3>delicious food</h3>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <img src="{% static 'images/img3.jpg' %}" alt="">
+        <h3>delicious food</h3>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <img src="{% static 'images/img4.jpg' %}" alt="">
+        <h3>delicious food</h3>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <img src="{% static 'images/img5.jpg' %}" alt="">
+        <h3>delicious food</h3>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <img src="{% static 'images/img6.jpg' %}" alt="">
+        <h3>delicious food</h3>
+    </div>
+
+</div>
+
+</section>
+
+<!-- gallery section ends -->
+
+
+<!-- footer section starts  -->
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>contact info</h3>
+            <p> <i class="fas fa-map-marker-alt"></i> mumbai, indai 400104 </p>
+            <p> <i class="fas fa-envelope"></i> example@gmail.com </p>
+            <p> <i class="fas fa-phone"></i> +123-456-7890 </p>
+            <p> <i class="fas fa-phone"></i> +111-222-333 </p>
+        </div>
+
+        <div class="box">
+            <h3>branch location</h3>
+            <a href="#">india</a>
+            <a href="#">USA</a>
+            <a href="#">france</a>
+            <a href="#">russia</a>
+        </div>
+
+        <div class="box">
+            <h3>quick links </h3>
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">menu</a>
+            <a href="#">popular</a>
+            <a href="#">gallery</a>
+            <a href="#">order</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">instagram</a>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <h1 class="credit">create by <a href="#">mr. web designer</a> all rights reserved. </h1>
+
+</div>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- aos js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/script.js' %}"></script>
+
+<!-- initializing aos  -->
+
+<script>
+
+    AOS.init({
+        delay:400,
+        duration:1000
+    })
+
+</script>
+
+</body>
+</html>
