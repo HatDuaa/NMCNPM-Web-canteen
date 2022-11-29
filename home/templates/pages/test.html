@@ -1,0 +1,20 @@
+
+{% extends "pages/base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+    {% for dish in Dishs  %}
+        <h4>{{dish.name}}</h4>
+    {% endfor %}
+    <h1>Xin Chào</h1>
+    Đây là app home   
+{% endblock %}
+
+
+
+
+
+
