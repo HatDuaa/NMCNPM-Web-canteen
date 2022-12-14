@@ -9,7 +9,25 @@ Home
     {% for dish in Dishs  %}
         <h4>{{dish.name}}</h4>
     {% endfor %}
-    
+
+    {% for comment in dish.comment.all  %}
+        <h4><strong>{{comment.author}}</strong></h4>
+        <h6><p> {{comment.date}}</p></h6>
+        <p> {{comment.body|linebreaks}}</p>
+
+    {% endfor %}
+   
+   {% if user.username%}
+    <form action = "{% url 'dish' dish.id %}" method='POST' >
+        {% csrf_token %}
+        <p> <label>Bình luận </label></p>
+        {{form.body}}
+        <br/>
+        <input type="submit" values="Bình luận" />
+    </form>
+
+   {%endif%}
+
 {% endblock %}
 
 

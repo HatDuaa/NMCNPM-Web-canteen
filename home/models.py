@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class Dish(models.Model):
@@ -13,3 +14,10 @@ class Dish(models.Model):
 
     def _str_(self):
         return self.name
+
+class Comment(models.Model):
+    dish = models.ForeignKey(Dish, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    body = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    

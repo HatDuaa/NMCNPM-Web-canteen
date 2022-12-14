@@ -3,6 +3,6 @@ from .models import Dish
 # Register your models here.
 
 class DishAdmin(admin.ModelAdmin):
-    list_display=['name', 'price']
-    list_filter=['price', 'name']
+    list_display=['name', 'type', 'price']
+    list_filter=['price', 'type', 'name']
 admin.site.register(Dish, DishAdmin)

@@ -235,21 +235,16 @@ header #menu-bar{
     color:#fff;
 }
 
-.menu .row{
+.row .box-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
-
-.row .box-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+.row .box-container .box {
+    display: none;
 }
-
-.row .box-container .box{
+.row .box-container .box.active {
     background:#fff;
     width:35rem;
     padding:2rem;
@@ -257,6 +252,7 @@ header #menu-bar{
     border-radius: 1rem;
     box-shadow: 0 .3rem .5rem rgba(0,0,0,.2);
     text-align: center;
+    display: block;
 }
 
 .row .box-container .box img{
@@ -279,6 +275,10 @@ header #menu-bar{
 
 .row .box-container .box .price{
     color:#666;
+    font-size: 2.5rem;
+}
+.row .box-container .box .remain{
+    color:red;
     font-size: 2.5rem;
 }
 

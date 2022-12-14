@@ -30,6 +30,29 @@ $(document).ready(function(){
         $(this).addClass('active').siblings().removeClass('active');
         let src = $(this).attr('data-src');
         $('.menu .row .image img').attr('src',src);
+        var listItem = ["maindish","sidedish","drink","combo"];
+        function removeAll(listItem) {
+            listItem.forEach(function(item) {
+                $(`.box-container .${item} .box.active`).removeClass('active')
+            })
+        }
+        if(this.id === "menu1") {
+            removeAll(listItem);
+            $('.box-container .maindish .box').addClass('active')
+        }
+        if(this.id === "menu2") {
+            removeAll(listItem);
+            $('.box-container .sidedish .box').addClass('active')
+        }
+        if(this.id === "menu3") {
+            removeAll(listItem);
+            $('.box-container .drink .box').addClass('active')
+        }
+        if(this.id === "menu4") {
+            removeAll(listItem);
+            $('.box-container .combo .box').addClass('active')
+        }
+        
     });
 
 });
