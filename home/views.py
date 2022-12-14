@@ -14,10 +14,6 @@ from django.views.generic import ListView, DetailView
 # def blog(request):
 #    return render(request, 'pages/blog.html')
 
-def list(request):
-    data = {'Dishs': Dish.objects.all().order_by('name')}
-    return render(request, "pages/home.html", data)
-    
 
 class DishListView(ListView):
     queryset = Dish.objects.all().order_by('name')

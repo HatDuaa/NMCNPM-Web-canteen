@@ -5,7 +5,6 @@
 {% block maindish %}
     {% for dish in Dishs %}
         {% if dish.type == "1" %}
-        
             <div class="box active" data-aos="fade-right">
                 <img src= "{{dish.image.url}}" alt="">
                 <h3>{{dish.name}}</h3>
