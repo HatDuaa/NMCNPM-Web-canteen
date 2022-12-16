@@ -16,7 +16,7 @@ from django.views.generic import ListView, DetailView
 
 
 class DishListView(ListView):
-    queryset = Dish.objects.all().order_by('name')
+    queryset = Dish.objects.all().order_by('price')
     template_name = 'pages/home.html'
     context_object_name = 'Dishs'
 
