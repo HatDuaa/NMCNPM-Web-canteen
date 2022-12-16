@@ -39,12 +39,18 @@
     </nav>
 
     <div>
-        {% if user.username %}
-            <p>Xin chào {{user.username}}</p>
-            <p><a class = "navigate" href="{% url 'logout' %}">Đăng xuất</a></p>
-        {% else %}
-            <p><a class = "navigate" href="{% url 'register' %}">Đăng ký</a>|<a class = "navigate" href="{% url 'login' %}">Đăng nhập</a></p>
-        {% endif %}
+        <center>
+            {% if user.username %}
+            <p class = "welcome"> </p>
+            <strong class = "welcome">{{user.username}}</strong>
+            <p class = "space"> | </p>
+            <p><a class = "navigate" href="{% url 'logout' %}">Log Out</a></p>
+            {% else %}
+                <p><a class = "navigate" href="{% url 'register' %}">Sign Up</a>
+                <p class = "space"> | </p>    
+                <a class = "navigate" href="{% url 'login' %}">Log in</a></p>
+            {% endif %}
+        </center>      
     </div>
 
 </header>
