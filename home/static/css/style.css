@@ -241,6 +241,8 @@ header p{
     color:#fff;
 }
 
+
+
 .row .box-container {
     display: flex;
     align-items: center;
@@ -249,6 +251,12 @@ header p{
 }
 .row .box-container .box {
     display: none;
+}
+.maindish, .sidedish, .drink, .combo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .row .box-container .box.active {
     background:#fff;
