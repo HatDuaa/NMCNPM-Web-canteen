@@ -124,8 +124,27 @@ header .navigate,
 header p{
     font-size: 17px;
     color: var(--yellow);
+    display: inline-block;
 }
 
+header .navigate {
+    color: red;
+}
+
+header .space {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 5px 0 5px;
+}
+
+header strong {
+    font-size: 15px;
+}
+
+header .welcome {
+    display: inline-block;
+    color: black;
+}
 .home{
     display: flex;
     align-items: center;
