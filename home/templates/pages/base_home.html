@@ -38,13 +38,12 @@
         </ul>
     </nav>
 
-    123qwe
     <div>
         {% if user.username %}
             <p>Xin chào {{user.username}}</p>
-            <p><a href="{% url 'logout' %}">Đăng xuất</a></p>
+            <p><a class = "navigate" href="{% url 'logout' %}">Đăng xuất</a></p>
         {% else %}
-            <p><a href="{% url 'register' %}">Đăng ký</a>|<a href="{% url 'login' %}">Đăng nhập</a></p>
+            <p><a class = "navigate" href="{% url 'register' %}">Đăng ký</a>|<a class = "navigate" href="{% url 'login' %}">Đăng nhập</a></p>
         {% endif %}
     </div>
 

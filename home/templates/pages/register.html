@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
 <body>
-    <center>
-        <form action='.' method='POST'>
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Đăng ký"/>
-        </form>
-    </center>
+    <div class="background">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="register()">Create Account</button>
+            </div>
+            <div class="social-icons">
+                <img src="{% static 'images/fb.png' %}" alt="">
+                <img src="{% static 'images/tw.png' %}" alt="">
+                <img src="{% static 'images/gp.png' %}" alt="">
+            </div>
+            <form class="input-group" action='.' method='POST'>
+                {% csrf_token %}
+                {{form.as_p}}     
+                <input class = "submit-btn" type="submit" value="Đăng ký"/>          
+            </form>
+            
+        </div>       
+    </div>
+    
 </body>
 </html>
