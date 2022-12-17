@@ -28,7 +28,7 @@ def DishView(request, pk):
         form = CommentForm(request.POST, author=request.user, dish=dish)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(pk)
+            return HttpResponseRedirect(request.path)
 
     return render(request, "pages/dish.html", {"dish": dish, "form": form})
 
