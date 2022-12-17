@@ -1,0 +1,25 @@
+{% extends "pages/base.html" %}
+ 
+{% block title %}{{dish.name}}{% endblock %}
+ 
+{% block content %}
+<h3><a href="home/{{dish.id}}">{{dish.name}}</a></h3>
+<img src="{{dish.image.url}}" width="500px" height="300px" />
+<h6>on {{dish.date}}</h6>
+{{dish.body|safe|linebreaks}}
+
+{% for comment in dish.comments.all %}
+    <h4><strong>{{comment.author}}</strong></h4>
+    <h6><p>{{comment.date}}</p></h6>
+    <p>{{comment.body|linebreaks}}</p>
+{% endfor %}
+{% if user.username %}
+    <form action="{% url 'post' post.id %}" method="POST">
+        {% csrf_token %}
+        <p><label>Bình luận:</label></p>
+        {{form.body}}
+        <br/>
+        <input type="submit" value="Bình luận"/>
+    </form>
+{% endif %}
+{% endblock %}

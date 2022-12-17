@@ -1,34 +1,103 @@
 
-{% extends "pages/base.html" %}
+{% extends "pages/base_home.html" %}
 
-{% block title %}
-Home
+
+{% block maindish %}
+    {% for dish in Dishs %}
+        {% if dish.type == "1" %}
+        <a href="home/{{dish.id}}">
+            <div class="box active" data-aos="fade-right">
+                <img src= "{{dish.image.url}}" alt="">
+                <h3>{{dish.name}}</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">{{dish.price}} VND</div>
+                <div class="remain">Số lượng: {{dish.remaining}}</div>
+                <a href="#"><button class="btn">add to cart</button></a>                
+            </div>
+        </a>
+        {% endif%}
+    {% endfor %}
 {% endblock %}
 
-{% block content %}
+{% block sidedish %}
+    {% for dish in Dishs %}
+        {% if dish.type == "2" %}
+            <div class="box" data-aos="fade-right">
+                <img src= "{{dish.image.url}}" alt="">
+                <h3>{{dish.name}}</h3>
+                
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">{{dish.price}}</div>
+                <div class="remain">Số lượng: {{dish.remaining}}</div>
+                <a href="#"><button class="btn">add to cart</button></a>                
+            </div>
+        {% endif%}
+    {% endfor %}
+{% endblock %}
+
+{% block drink %}
+    {% for dish in Dishs %}
+        {% if dish.type == "3" %}
+            <div class="box" data-aos="fade-right">
+                <img src= "{{dish.image.url}}" alt="">
+                <h3>{{dish.name}}</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">{{dish.price}}</div>
+                <div class="remain">Còn lại: {{dish.remaining}}</div>
+                <a href="#"><button class="btn">add to cart</button></a>                
+            </div>
+        {% endif%}
+    {% endfor %}
+{% endblock %}
+
+{% block combo %}
+    {% for dish in Dishs %}
+        {% if dish.type == "4" %}
+            <div class="box" data-aos="fade-right">
+                <img src= "{{dish.image.url}}" alt="">
+                <h3>{{dish.name}}</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price">{{dish.price}}</div>
+                <div class="remain">Số lượng: {{dish.remaining}}</div>
+                <a href="#"><button class="btn">add to cart</button></a>                
+            </div>
+        {% endif%}
+    {% endfor %}
+{% endblock %}
+
+{% comment %} {% block content %}
     {% for dish in Dishs  %}
         <h4>{{dish.name}}</h4>
+        <h4>{{dish.price}}</h4>
+        <img src="{% static 'images/product-4.jpg' %}" alt="">
     {% endfor %}
-
-    {% for comment in dish.comment.all  %}
-        <h4><strong>{{comment.author}}</strong></h4>
-        <h6><p> {{comment.date}}</p></h6>
-        <p> {{comment.body|linebreaks}}</p>
-
-    {% endfor %}
-   
-   {% if user.username%}
-    <form action = "{% url 'dish' dish.id %}" method='POST' >
-        {% csrf_token %}
-        <p> <label>Bình luận </label></p>
-        {{form.body}}
-        <br/>
-        <input type="submit" values="Bình luận" />
-    </form>
-
-   {%endif%}
-
-{% endblock %}
+    <h1>Xin Chào</h1>
+    Đây là app home   
+{% endblock %} {% endcomment %}
 
 
 
