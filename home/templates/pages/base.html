@@ -1,26 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   {% load static %}
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="{% static 'css/review.css' %}">
-   <title>{{dish.name}}</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive FOOD Website Design Tutorial</title>
+
+    <!-- aos css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <!-- google fonts cdn link  -->
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
-   <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    </title>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/review.css' %}">
+    
 </head>
 <body>
-   
-   {% block content %}
-  
-   {% endblock %}
-   
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><img src="{% static 'images/logo-img.png' %}" alt=""></a>
+
+    <div id="menu-bar" class="fas fa-hamburger"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">Dish</a></li>
+            <li><a href="#testimonials">Review</a></li>
+            <li><a href="#comment-box">Comment</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <center>
+            {% if user.username %}
+            <p class = "welcome"> </p>
+            <strong class = "welcome">{{user.username}}</strong>
+            <p class = "space"> | </p>
+            <p><a class = "navigate" href="{% url 'logout' %}">Log Out</a></p>
+            {% else %}
+                <p><a class = "navigate" href="{% url 'register' %}">Sign Up</a>
+                <p class = "space"> | </p>    
+                <a class = "navigate" href="{% url 'login' %}">Log in</a></p>
+            {% endif %}
+        </center>      
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+
+{% block content %}
+
+{% endblock %}
+
+
+<!-- footer section starts  -->
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>contact info</h3>
+            <p> <i class="fas fa-map-marker-alt"></i> mumbai, indai 400104 </p>
+            <p> <i class="fas fa-envelope"></i> example@gmail.com </p>
+            <p> <i class="fas fa-phone"></i> +123-456-7890 </p>
+            <p> <i class="fas fa-phone"></i> +111-222-333 </p>
+        </div>
+
+        <div class="box">
+            <h3>branch location</h3>
+            <a href="#">Ho Chi Minh</a>
+            <a href="#">Thu Duc</a>
+            <a href="#">Binh Duong</a>
+            <a href="#">Ha Noi</a>
+        </div>
+
+        <div class="box">
+            <h3>quick links </h3>
+            <a href="#">home</a>
+            <a href="#">menu</a>
+            <a href="#">gallery</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">instagram</a>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <h1 class="credit">create by <a href="#">mr. web designer</a> all rights reserved. </h1>
+
+</div>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- aos js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/script.js' %}"></script>
+
+<!-- initializing aos  -->
+
+<script>
+
+    AOS.init({
+        delay:400,
+        duration:1000
+    })
+
+</script>
+
 </body>
 </html>

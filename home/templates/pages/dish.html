@@ -15,7 +15,7 @@
     </div>
     {{dish.body|safe|linebreaks}}
 
-    <div class = "testimonials">
+    <div id="testimonials" class = "testimonials">
         <div class = "inner">
             <h1>Dish Review</h1>
             <div class = "border"></div>
@@ -34,7 +34,7 @@
         </div>
     </div> 
     
-    <div class="comment-box"
+    <div id="comment-box" class="comment-box">
         {% if user.username %}
             <form action="." method="POST">
                 {% csrf_token %}
