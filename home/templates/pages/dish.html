@@ -1,26 +1,48 @@
 {% extends "pages/base.html" %}
- 
-{% block title %}{{dish.name}}{% endblock %}
- 
+{% load static %}
+
+
 {% block content %}
-<h3><a href="home/{{dish.id}}">{{dish.name}}</a></h3>
-<img src="{{dish.image.url}}" width="500px" height="300px" />
-<h6>on {{dish.date}}</h6>
-{{dish.body|safe|linebreaks}}
+    <div class="dish-describe">
+        <div>
+            <h3><p class="dish-name" href="home/{{dish.id}}">{{dish.name}}</p></h3>    
+            <h6 class="dish-date">on {{dish.date}}</h6>
+        </div>
 
-{% for comment in dish.comments.all %}
-    <h4><strong>{{comment.author}}</strong></h4>
-    <h6><p>{{comment.date}}</p></h6>
-    <p>{{comment.body|linebreaks}}</p>
-{% endfor %}
+        <div>
+            <img class="dish-image" src="{{dish.image.url}}" width="500px" height="300px" />
+        </div>
+    </div>
+    {{dish.body|safe|linebreaks}}
 
-{% if user.username %}
-    <form action="." method="POST">
-        {% csrf_token %}
-        <p><label>Bình luận:</label></p>
-        {{form.body}}
-        <br/>
-        <input type="submit" value="Bình luận"/>
-    </form>
-{% endif %}
+    <div class = "testimonials">
+        <div class = "inner">
+            <h1>Dish Review</h1>
+            <div class = "border"></div>
+                <div class = "row">
+                    {% for comment in dish.comments.all %}
+                        <div class = "col">
+                            <div class = "testimonial">                           
+                                <img src="{% static 'images/userImage.png' %}" alt="">   
+                                <h4><strong  class = "name">{{comment.author}}</strong></h4>
+                                <h6><p class="date">{{comment.date}}</p></h6>
+                                <p class="comment">{{comment.body|linebreaks}}</p>                                   
+                            </div>                    
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div> 
+    
+    <div class="comment-box"
+        {% if user.username %}
+            <form action="." method="POST">
+                {% csrf_token %}
+                <p>Bình luận:</p>
+                {{form.body}}
+                <br/>
+                <input type="submit" value="Bình luận"/>
+            </form>
+        {% endif %}
+    </div>
 {% endblock %}
